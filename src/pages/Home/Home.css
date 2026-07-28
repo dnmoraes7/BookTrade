@@ -1,0 +1,357 @@
+/* =======================================================
+   HERO
+======================================================= */
+
+.hero {
+    max-width: 1200px;
+    min-height: 550px;
+    margin: auto;
+    padding: 65px 24px;
+
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero h1,
+.home-cta h2 {
+    margin: 14px 0;
+
+    font: 700 55px/1.08 var(--serif);
+    letter-spacing: -2px;
+}
+
+.hero h1 em,
+.steps-section h2 em {
+    color: var(--green);
+}
+
+.hero-copy > p {
+    max-width: 510px;
+
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =======================================================
+   BOTÕES DO HERO
+======================================================= */
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+/* =======================================================
+   LEITORES
+======================================================= */
+
+.readers {
+    display: flex;
+    align-items: center;
+
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.readers span {
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+    place-items: center;
+
+    margin-left: -5px;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    background: #6c8c70;
+
+    color: #fff;
+    font-size: 8px;
+}
+
+.readers b {
+    margin-left: 10px;
+}
+
+/* =======================================================
+   IMAGEM HERO
+======================================================= */
+
+.hero-art {
+    position: relative;
+    height: 435px;
+}
+
+.hero-art img {
+    width: 360px;
+    height: 435px;
+
+    float: right;
+    object-fit: cover;
+
+    border-radius: 150px 150px 15px 15px;
+
+    box-shadow: 0 16px 30px #275f2b23;
+}
+
+.hero-art > div {
+    position: absolute;
+
+    top: 60px;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    box-shadow: 0 10px 25px #23482717;
+
+    color: var(--green);
+    font-size: 12px;
+}
+
+.hero-art small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    font-weight: 400;
+}
+
+/* =======================================================
+   BARRA DE CONFIANÇA
+======================================================= */
+
+.trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+
+    padding: 18px;
+
+    background: var(--light-green);
+
+    color: #506752;
+    font-size: 12px;
+}
+
+.trust-bar span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.trust-bar svg {
+    width: 17px;
+    color: var(--green);
+}
+
+/* =======================================================
+   TÍTULOS DAS SEÇÕES
+======================================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 26px;
+}
+
+.section-heading h2,
+.steps-section h2 {
+    margin: 7px 0;
+
+    font: 700 31px var(--serif);
+}
+
+.section-heading p,
+.steps-section > div > p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.section-heading > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =======================================================
+   COMO FUNCIONA
+======================================================= */
+
+.steps-section {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 70px;
+
+    padding: 70px max(24px, calc((100vw - 1150px) / 2));
+
+    background: #fff;
+}
+
+.steps-section h2 {
+    font-size: 37px;
+}
+
+/* =======================================================
+   PASSOS
+======================================================= */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.steps article {
+    position: relative;
+}
+
+.steps i {
+    position: absolute;
+    right: 4px;
+
+    color: #e2efe3;
+
+    font: 700 36px var(--serif);
+}
+
+.steps article > span {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background: var(--light-green);
+
+    color: var(--green);
+}
+
+.steps h3 {
+    margin: 13px 0 6px;
+
+    font-size: 13px;
+}
+
+.steps p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =======================================================
+   CHAMADA FINAL
+======================================================= */
+
+.home-cta {
+    max-width: 1150px;
+
+    margin: 70px auto;
+    padding: 55px 65px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        110deg,
+        #236f2a,
+        #439b4b
+    );
+
+    color: #fff;
+}
+
+.home-cta .eyebrow {
+    color: #d2eed3;
+}
+
+.home-cta h2 {
+    max-width: 500px;
+    font-size: 39px;
+}
+
+.home-cta p {
+    margin-bottom: 22px;
+
+    color: #d9e9da;
+}
+
+/* =======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media (max-width: 760px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-art {
+        display: none;
+    }
+
+    .trust-bar {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: 12px 20px;
+
+        padding: 17px 20px;
+    }
+
+    .steps-section {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 52px 20px;
+    }
+
+    .steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home-cta {
+        margin: 45px 18px;
+        padding: 35px 27px;
+    }
+
+    .home-cta h2 {
+        font-size: 32px;
+    }
+
+}

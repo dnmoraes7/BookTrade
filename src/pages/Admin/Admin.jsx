@@ -1,0 +1,6 @@
+import { BookOpen, Coins, ShoppingBag, Users } from "lucide-react";
+import DashboardSidebar from "../../components/DashboardSidebar/DashboardSidebar";
+import { useBooks } from "../../contexts/BookContext";
+import "../shared/Mensagens.css";
+function Admin() { const { books } = useBooks(); return <div className="workspace"><DashboardSidebar /><section className="workspace-main"><div className="workspace-heading"><div><span className="section-label">PAINEL ADMINISTRATIVO</span><h1>Visão geral da plataforma</h1><p>Acompanhe a saúde da comunidade BookSwap.</p></div></div><div className="stat-grid">{[[Users, "12.482", "Usuários ativos"], [BookOpen, books.length, "Livros publicados"], [Coins, "1.826", "Trocas no mês"], [ShoppingBag, "R$ 18.420", "Vendas marketplace"]].map(([Icon, value, label]) => <article key={label}><span><Icon size={18} /></span><b>{value}</b><p>{label}</p></article>)}</div><section className="panel"><div className="panel-heading"><div><h2>Livros recentes</h2><p>Itens aguardando moderação</p></div></div>{books.slice(0, 4).map((book) => <div className="simple-book" key={book.id}><img src={book.image} alt="" /><div><b>{book.title}</b><p>{book.owner} · {book.type}</p></div><button className="button button--outline">Aprovar</button></div>)}</section></section></div>; }
+export default Admin;

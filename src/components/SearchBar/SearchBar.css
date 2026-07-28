@@ -1,0 +1,100 @@
+/* Barra de pesquisa */
+
+.catalog-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 30px 0;
+    padding: 10px;
+
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+/* Campo de pesquisa */
+
+.catalog-search>div:first-child {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 10px;
+
+    color: #6f776f;
+}
+
+/* Input */
+
+.catalog-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+
+/* Área do filtro */
+
+.city-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 12px;
+
+    border-left: 1px solid var(--line);
+
+    color: #5c645d;
+}
+
+/* Select */
+
+.city-filter select {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Botão */
+
+.catalog-search .button {
+    padding: 11px 22px;
+
+    white-space: nowrap;
+}
+
+/* Responsivo */
+
+@media (max-width: 700px) {
+
+    .catalog-search {
+        flex-wrap: wrap;
+    }
+
+    .catalog-search>div:first-child {
+        width: 100%;
+        flex: 100%;
+    }
+
+    .city-filter {
+        flex: 1;
+
+        border-left: none;
+        border-top: 1px solid var(--line);
+
+        padding-top: 10px;
+    }
+
+    .catalog-search .button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,7 @@
+.content-section, .catalog-page, .details-page, .cart-page { max-width: 1200px; margin: 0 auto; padding: 72px 24px; }
+.book-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.page-title h1, .workspace-heading h1 { margin: 7px 0; font: 700 43px/1.1 var(--serif); letter-spacing: -1.2px; }
+.page-title p, .workspace-heading p { margin: 0; color: var(--muted); font-size: 14px; }
+.panel { padding: 20px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.full-button { width: 100%; margin-top: 8px; }
+@media (max-width: 760px) { .content-section, .catalog-page, .details-page, .cart-page { padding: 45px 18px; }.book-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }.page-title h1, .workspace-heading h1 { font-size: 32px; } }

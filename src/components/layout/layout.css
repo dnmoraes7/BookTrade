@@ -1,0 +1,389 @@
+/* =======================================================
+   HEADER
+======================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    height: 72px;
+
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    max-width: 1280px;
+    height: 100%;
+
+    margin: auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* =======================================================
+   LOGO
+======================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1.3px;
+}
+
+.brand > span:first-child {
+    width: 29px;
+    height: 29px;
+
+    display: grid;
+    place-items: center;
+
+    margin-right: 4px;
+
+    border-radius: 8px;
+
+    background: var(--green);
+    color: #fff;
+}
+
+.brand > span:last-child {
+    color: var(--green);
+}
+
+/* =======================================================
+   LINKS DA NAVBAR
+======================================================= */
+
+.main-nav {
+    flex: 1;
+
+    display: flex;
+    gap: 28px;
+}
+
+.main-nav a {
+    position: relative;
+    color: #5f6861;
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: all .25s ease;
+}
+
+/* Linha animada */
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    border-radius: 10px;
+
+    transition: width .3s ease;
+}
+
+.main-nav a:hover{
+    color: var(--green);
+    transform: translateY(-2px);
+}
+
+.main-nav a.active {
+    color: var(--green);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* =======================================================
+   AÇÕES DO HEADER
+======================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* Pesquisa */
+
+.header-search {
+    width: 205px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 22px;
+
+    color: #778078;
+}
+
+.header-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 11px;
+}
+
+/* Ícones */
+
+.header-icon {
+    position: relative;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+}
+
+.header-icon i {
+    position: absolute;
+
+    top: 1px;
+    right: 1px;
+
+    min-width: 14px;
+
+    padding: 1px;
+
+    border-radius: 9px;
+
+    background: var(--yellow);
+
+    color: #463100;
+    font-size: 8px;
+    font-style: normal;
+    text-align: center;
+}
+
+/* Avatar */
+
+.avatar {
+    width: 33px;
+    height: 33px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #dba178;
+
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.login-link {
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.menu-button {
+    display: none;
+}
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
+.site-footer {
+    padding: 52px max(24px, calc((100vw - 1150px) / 2)) 18px;
+
+    background: #203522;
+    color: #c9d4ca;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .75fr .75fr 1.2fr;
+    gap: 35px;
+}
+
+.footer-brand {
+    color: #fff;
+}
+
+.footer-grid h4 {
+    margin: 4px 0 14px;
+
+    color: #fff;
+    font-size: 13px;
+}
+
+.footer-grid p {
+    color: #b5c1b6;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-grid a {
+    display: block;
+
+    margin: 9px 0;
+
+    color: #b5c1b6;
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: color .25s;
+}
+
+.footer-grid a:hover {
+    color: #fff;
+}
+
+/* Newsletter */
+
+.newsletter form {
+    display: flex;
+
+    padding: 4px;
+
+    background: #394d3b;
+
+    border-radius: 6px;
+}
+
+.newsletter input {
+    width: 100%;
+
+    padding: 7px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #fff;
+    font-size: 11px;
+}
+
+.newsletter button {
+    width: 30px;
+
+    border-radius: 4px;
+
+    background: var(--yellow);
+}
+
+/* Rodapé inferior */
+
+.footer-bottom {
+    margin-top: 35px;
+    padding-top: 15px;
+
+    border-top: 1px solid #405442;
+
+    color: #9fb0a0;
+    font-size: 10px;
+}
+
+.footer-bottom span {
+    float: right;
+}
+
+/* =======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media (max-width: 850px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.open {
+        position: absolute;
+
+        top: 72px;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 16px 24px;
+
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .header-inner {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .header-search {
+        width: 35px;
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .header-search input {
+        display: none;
+    }
+
+    .header-icon:nth-of-type(2) {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .footer-bottom span {
+        display: block;
+
+        float: none;
+
+        margin-top: 6px;
+    }
+
+}
