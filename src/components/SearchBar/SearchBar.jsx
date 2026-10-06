@@ -2,70 +2,38 @@ import { MapPin, Search } from "lucide-react";
 
 import "./SearchBar.css";
 
-function SearchBar({
-    query,
-    setQuery,
-    city,
-    setCity,
-    cities,
-    onSearch,
-}) {
+function SearchBar({ query, setQuery, city, setCity, cities, onSearch }) {
+  return (
+    <form className="catalog-search" onSubmit={onSearch}>
+      {/* Campo de pesquisa */}
 
-    return (
+      <div>
+        <Search size={18} />
 
-        <form
-            className="catalog-search"
-            onSubmit={onSearch}
-        >
+        <input
+          value={query}
+          placeholder="Título, autor ou ISBN"
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </div>
 
-            {/* Campo de pesquisa */}
+      {/* Filtro por cidade */}
 
-            <div>
+      <div className="city-filter">
+        <MapPin size={16} />
 
-                <Search size={18} />
-
-                <input
-                    value={query}
-                    placeholder="Título, autor ou ISBN"
-                    onChange={(event) =>
-                        setQuery(event.target.value)
-                    }
-                />
-
-            </div>
-
-            {/* Filtro por cidade */}
-
-            <div className="city-filter">
-
-    <MapPin size={16} />
-
-    <select
-        value={city}
-        onChange={(event) => setCity(event.target.value)}
-    >
-        {cities.map((city) => (
-            <option
-                key={city}
-                value={city}
-            >
-                {city}
+        <select value={city} onChange={(event) => setCity(event.target.value)}>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
             </option>
-        ))}
-    </select>
+          ))}
+        </select>
+      </div>
 
-</div>
-
-<button
-    className="button button--primary"
->
-    Buscar
-</button>
-
-        </form>
-
-    );
-
+      <button className="button button--primary">Buscar</button>
+    </form>
+  );
 }
 
 export default SearchBar;

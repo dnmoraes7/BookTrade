@@ -30,14 +30,20 @@ function App() {
               <Route path="/carrinho" element={<Marketplace />} />
               <Route path="/login" element={<AuthPage mode="login" />} />
               <Route path="/cadastro" element={<AuthPage mode="signup" />} />
-              <Route path="/recuperar-senha" element={<AuthPage mode="recover" />} />
+              <Route
+                path="/recuperar-senha"
+                element={<AuthPage mode="recover" />}
+              />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/meus-livros" element={<UserBooks />} />
               <Route path="/livros/novo" element={<BookForm />} />
               <Route path="/livros/:id/editar" element={<BookForm />} />
               <Route path="/trocas" element={<Mensagens type="swaps" />} />
-              <Route path="/favoritos" element={<Mensagens type="favorites" />} />
+              <Route
+                path="/favoritos"
+                element={<Mensagens type="favorites" />}
+              />
               <Route path="/mensagens" element={<Mensagens type="chat" />} />
               <Route path="/pedidos" element={<Mensagens type="orders" />} />
               <Route path="/admin" element={<Admin />} />
