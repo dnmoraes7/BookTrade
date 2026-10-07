@@ -4,8 +4,6 @@ import {
   Coins,
   Heart,
   ShieldCheck,
-  Sparkles,
-  Users,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -15,7 +13,7 @@ import BookCard from "../../components/BookCard/BookCard";
 import "./Home.css";
 
 function Home() {
-  const { books } = useBooks();
+  const { books, booksLoading, booksError } = useBooks();
 
   return (
     <>
@@ -95,6 +93,11 @@ function Home() {
             <BookCard key={book.id} book={book} />
           ))}
         </div>
+        {booksLoading && <p className="empty-state">Carregando divulgações...</p>}
+        {booksError && <p className="empty-state">{booksError}</p>}
+        {!booksLoading && !booksError && books.length === 0 && (
+          <p className="empty-state">Ainda não há divulgações cadastradas.</p>
+        )}
       </section>
 
       {/* ================= COMO FUNCIONA ================= */}

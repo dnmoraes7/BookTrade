@@ -18,8 +18,7 @@ function Footer() {
         <div>
           <h4>BookSwap</h4>
           <Link to="/explorar">Explorar livros</Link>
-          <Link to="/doacoes">Doações</Link>
-          <Link to="/marketplace">Marketplace</Link>
+          <Link to="/explorar">Doações e trocas</Link>
         </div>
         <div>
           <h4>Suporte</h4>

@@ -8,15 +8,25 @@ function AuthPage({ mode }) {
   const { login, register } = useAuth();
   const navigate = useNavigate();
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const isLogin = mode === "login";
   const isRecover = mode === "recover";
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
     if (isRecover) return setSent(true);
-    if (isLogin) login(form.email);
-    else register(form);
-    navigate("/dashboard");
+    setError("");
+    setSubmitting(true);
+    try {
+      if (isLogin) await login(form.email, form.password);
+      else await register(form);
+      navigate("/dashboard");
+    } catch (requestError) {
+      setError(requestError.response?.data?.erro || "Não foi possível concluir. Verifique os dados e tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
   }
   const title = isRecover
     ? "Recupere sua senha"
@@ -104,17 +114,18 @@ function AuthPage({ mode }) {
                   />
                 </label>
               )}
+              {error && <p className="form-feedback" role="alert">{error}</p>}
               {isLogin && (
                 <Link className="forgot-link" to="/recuperar-senha">
                   Esqueci minha senha
                 </Link>
               )}
-              <button className="button button--primary full-button">
+              <button className="button button--primary full-button" disabled={submitting}>
                 {isRecover
                   ? "Enviar link"
                   : isLogin
                     ? "Entrar na minha conta"
-                    : "Criar minha conta"}
+                    : submitting ? "Criando conta..." : "Criar minha conta"}
                 <ArrowRight size={17} />
               </button>
             </>

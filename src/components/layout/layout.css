@@ -387,3 +387,18 @@
     }
 
 }
+
+@media (max-width: 850px) {
+    .header-inner { gap: 14px; }
+    .main-nav.open { z-index: 11; gap: 14px; }
+    .main-nav.open a { padding: 8px 0; }
+    .header-actions { margin-left: auto; }
+}
+
+@media (max-width: 380px) {
+    .header-inner { padding-inline: 10px; gap: 6px; }
+    .brand { font-size: 19px; }
+    .header-actions { gap: 4px; }
+    .menu-button { padding: 4px; }
+    .login-link { font-size: 11px; }
+}

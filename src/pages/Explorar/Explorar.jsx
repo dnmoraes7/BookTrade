@@ -5,6 +5,7 @@ import BookCard from "../../components/BookCard/BookCard";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 import { useBooks } from "../../contexts/BookContext";
+import { DEAL_TYPES, GENRES } from "../../data/catalogOptions";
 
 import "./Explorar.css";
 
@@ -13,7 +14,7 @@ function Explorar({ mode }) {
   const [params, setParams] = useSearchParams();
 
   // Livros cadastrados
-  const { books } = useBooks();
+  const { books, booksLoading, booksError } = useBooks();
 
   // Lista de cidades cadastradas
   const cities = useMemo(() => {
@@ -42,7 +43,7 @@ function Explorar({ mode }) {
             .toLowerCase()
             .includes(query.toLowerCase())) &&
         // Tipo de negociação
-        (type === "Todos" || book.type === type) &&
+        (type === "Todos" || book.type === type || (book.price == null && ["Troca", "Doação"].includes(type))) &&
         // Gênero
         (genre === "Todos" || book.genre === genre) &&
         // Cidade
@@ -64,12 +65,23 @@ function Explorar({ mode }) {
       <div className="page-title">
         <h1>
           {mode === "Venda"
-            ? "Marketplace"
+            ? "Livros à venda"
             : mode === "Doação"
               ? "Livros para doação"
               : "Explore livros"}
         </h1>
       </div>
+
+      {booksError && <p className="empty-state">{booksError}</p>}
+      {!booksError && booksLoading && (
+        <p className="empty-state">Carregando divulgações...</p>
+      )}
+      {type === "Doação" && !booksLoading && !booksError && (
+        <p className="empty-state">
+          O banco atual não identifica se divulgações sem preço são para troca
+          ou doação. Por isso, não é possível separar apenas as doações.
+        </p>
+      )}
 
       {/* Barra de pesquisa */}
 
@@ -106,7 +118,7 @@ function Explorar({ mode }) {
 
           <strong>Tipo de negociação</strong>
 
-          {["Todos", "Troca", "Doação", "Venda"].map((item) => (
+          {["Todos", ...DEAL_TYPES].map((item) => (
             <label key={item}>
               <input
                 type="radio"
@@ -124,13 +136,7 @@ function Explorar({ mode }) {
 
           <strong>Gênero literário</strong>
 
-          {[
-            "Todos",
-            "Literatura brasileira",
-            "Ficção",
-            "Romance",
-            "Não ficção",
-          ].map((item) => (
+          {["Todos", ...GENRES].map((item) => (
             <label key={item}>
               <input
                 type="radio"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Capa de livro não informada">
+  <rect width="400" height="600" fill="#edf1ed"/>
+  <path d="M112 145h176a24 24 0 0 1 24 24v262a24 24 0 0 1-24 24H112a24 24 0 0 1-24-24V169a24 24 0 0 1 24-24Z" fill="#d7e2d7"/>
+  <path d="M200 145v310" stroke="#b7c9b7" stroke-width="10"/>
+  <path d="M130 210h48m-48 28h48m44-28h48m-48 28h48" stroke="#91a891" stroke-width="8" stroke-linecap="round"/>
+  <text x="200" y="500" text-anchor="middle" fill="#617561" font-family="Arial, sans-serif" font-size="22">Capa não informada</text>
+</svg>
