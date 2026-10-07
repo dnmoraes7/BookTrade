@@ -32,7 +32,6 @@ function Header() {
           <NavLink to="/explorar">Explorar</NavLink>
           <NavLink to="/trocas">Trocas</NavLink>
           <NavLink to="/marketplace">Marketplace</NavLink>
-          <NavLink to="/doacoes">Doações</NavLink>
         </nav>
         <div className="header-actions">
           <form className="header-search" onSubmit={submitSearch}>
